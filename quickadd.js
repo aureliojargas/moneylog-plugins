@@ -2,8 +2,8 @@
 // Plugin box
 
 quickadd_html = '<div id="quickadd-box" class="toolbar-box"> \
-                     <a id="quickadd-header" class="button enable" href="#">quickadd</a> \
-                     <div id="quickadd-content" class="box-content"> \
+                     <a id="quickadd-header" class="button" href="#">quickadd</a> \
+                     <div id="quickadd-content" class="box-content" style="display: none"> \
                         <table> \
                             <tr><td>date:&nbsp;</td><td><input id="quickadd-input-date" type="text" /></td></tr> \
                             <tr><td>$:</td><td><input id="quickadd-input-val" type="text" /></td></tr> \
@@ -47,6 +47,17 @@ function quickaddClear() {
     $('#quickadd-input-desc').val('')
 }
 
+function toggleQuickAddBox() { // show / hide
+    current_state = $('#quickadd-content').css('display');
+    if(current_state == 'none') {
+        $('#quickadd-header').addClass('active');
+        $('#quickadd-content').css('display', 'block');
+    } else {
+        $('#quickadd-header').removeClass('active');
+        $('#quickadd-content').hide();
+    }
+}
+
 $(function() {
     setCurrentDate(); // Set before file load
 
@@ -60,7 +71,8 @@ $(function() {
     $('[id^="quickadd-input-"]').css(css_quickadd_inputs);
     $('[id^="quickadd-button-"]').css(css_quickadd_buttons);
 
-    toggleToolbarBox('quickadd-header', 'quickadd-content');
+    // Comment below to start hidden
+    //toggleQuickAddBox();
 
     // Others
     $('#quickadd-input-date').val(currentDate);

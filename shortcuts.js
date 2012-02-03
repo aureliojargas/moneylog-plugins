@@ -228,7 +228,14 @@ $(function() {
     shortcut.add('r', function () { loadSelectedFile(); }); // Reload current file
     shortcut.add('/', function () { $('#filter').focus(); }, { 'keycode': 191 }); // Focus on search field
     shortcut.add('e', function () { editorOn(); }); // Edit current file
-    shortcut.add('a', function () { $('#quickadd-input-date').focus(); }); // Focus on quickadd
+    shortcut.add('a', function () {
+    	current_state = $('#quickadd-content').css('display');
+    	if(current_state == 'none') {
+	        $('#quickadd-header').addClass('active');
+	        $('#quickadd-content').css('display', 'block');
+	    }
+	    $('#quickadd-input-date').focus();
+	}); // Focus on quickadd
 
     shortcut.add('shift+d', function () { $('#d').trigger('click'); }); // Daily
     shortcut.add('shift+m', function () { $('#m').trigger('click'); }); // Monthly
