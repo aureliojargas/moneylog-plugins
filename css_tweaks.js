@@ -11,4 +11,6 @@ var css_app_flavor = {
 $(function() {
     $('#app-name').css('line-height',  '42px');
     $('#app-flavor').css(css_app_flavor);
+
+    $('#charts').css('margin-top', '2em');
 });
