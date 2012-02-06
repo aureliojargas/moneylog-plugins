@@ -59,7 +59,7 @@ function toggleQuickAddBox() { // show / hide
 }
 
 $(function() {
-    setCurrentDate(); // Set before file load
+    //setCurrentDate(); // Set before file load
 
     // Append elements
     $(quickadd_html).insertAfter('#search-box');
@@ -75,7 +75,7 @@ $(function() {
     //toggleQuickAddBox();
 
     // Others
-    $('#quickadd-input-date').val(currentDate);
+    $('#quickadd-input-date').val(getCurrentDate());
 
     // Functions
     $('#quickadd-button-submit').click(quickaddSave);
