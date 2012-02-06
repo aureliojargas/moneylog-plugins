@@ -41,7 +41,7 @@ function quickaddSave() {
 }
 
 function quickaddClear() {
-    $('#quickadd-input-date').val(currentDate);
+    $('#quickadd-input-date').val(getCurrentDate());
     $('#quickadd-input-val').val('')
     $('#quickadd-input-tags').val('')
     $('#quickadd-input-desc').val('')
@@ -59,8 +59,6 @@ function toggleQuickAddBox() { // show / hide
 }
 
 $(function() {
-    //setCurrentDate(); // Set before file load
-
     // Append elements
     $(quickadd_html).insertAfter('#search-box');
     $('#quickadd-header').click(function() {
@@ -71,7 +69,7 @@ $(function() {
     $('[id^="quickadd-input-"]').css(css_quickadd_inputs);
     $('[id^="quickadd-button-"]').css(css_quickadd_buttons);
 
-    // Comment below to start hidden
+    // Comment below to start visible
     //toggleQuickAddBox();
 
     // Others
