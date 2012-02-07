@@ -69,7 +69,7 @@ $(function() {
     $('[id^="quickadd-input-"]').css(css_quickadd_inputs);
     $('[id^="quickadd-button-"]').css(css_quickadd_buttons);
 
-    // Comment below to start visible
+    // Comment below to start hidden
     //toggleQuickAddBox();
 
     // Others
