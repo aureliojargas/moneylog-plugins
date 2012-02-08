@@ -225,10 +225,10 @@ shortcut = {
 
 $(function() {
     shortcut.add('f', function() { toggleFullScreen() }); // Toggle Fullscreen
-    shortcut.add('r', function () { loadSelectedFile(); }); // Reload current file
-    shortcut.add('/', function () { $('#filter').focus(); }, { 'keycode': 191 }); // Focus on search field
-    shortcut.add('e', function () { editorOn(); }); // Edit current file
-    shortcut.add('a', function () {
+    shortcut.add('r', function() { loadSelectedFile(); }); // Reload current file
+    shortcut.add('/', function() { $('#filter').focus(); }, { 'keycode': 191 }); // Focus on search field
+    shortcut.add('e', function() { editorOn(); }); // Edit current file
+    shortcut.add('a', function() {
     	current_state = $('#quickadd-content').css('display');
     	if(current_state == 'none') {
 	        $('#quickadd-header').addClass('active');
@@ -237,17 +237,17 @@ $(function() {
 	    $('#quickadd-input-date').focus();
 	}); // Focus on quickadd
 
-    shortcut.add('shift+d', function () { $('#d').trigger('click'); }); // Daily
-    shortcut.add('shift+m', function () { $('#m').trigger('click'); }); // Monthly
-    shortcut.add('shift+a', function () { $('#y').trigger('click'); }); // Anual
-    shortcut.add('shift+y', function () { $('#y').trigger('click'); }); // Anual
+    shortcut.add('shift+d', function() { $('#d').trigger('click'); }); // Daily
+    shortcut.add('shift+m', function() { $('#m').trigger('click'); }); // Monthly
+    shortcut.add('shift+a', function() { $('#y').trigger('click'); }); // Anual
+    shortcut.add('shift+y', function() { $('#y').trigger('click'); }); // Anual
 
-    shortcut.add('ctrl+s', function () {
+    shortcut.add('ctrl+s', function() {
     	editorOn();
 	    editorSave();
 	});
 
-    shortcut.add('esc', function () {
+    shortcut.add('esc', function() {
 	    editorOff();
 	    if($('#filter').is(':focus')) {
 	    	if($('#filter').val()) {
