@@ -1,9 +1,9 @@
 // Quickadd Plugin
 // Plugin box
 
-quickadd_html = '<div id="quickadd-box" class="toolbar-box"> \
+quickadd_html = '<div id="quickadd-box" class="widget-box"> \
                      <a id="quickadd-header" class="button" href="#">quickadd</a> \
-                     <div id="quickadd-content" class="box-content" style="display: none"> \
+                     <div id="quickadd-content" class="widget-content" style="display: none"> \
                         <table> \
                             <tr><td>date:&nbsp;</td><td><input id="quickadd-input-date" type="text" /></td></tr> \
                             <tr><td>$:</td><td><input id="quickadd-input-val" type="text" /></td></tr> \
