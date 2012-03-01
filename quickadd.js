@@ -10,7 +10,10 @@ quickadd_html = '<div id="quickadd-box" class="widget-box"> \
                             <tr><td>tags:</td><td><input id="quickadd-input-tags" type="text" /></td></tr> \
                             <tr><td>desc:&nbsp;</td><td><input id="quickadd-input-desc" type="text" /></td></tr> \
                         </table> \
+                        <div id="quickadd-state">Salvando...</div> \
+                        <div id="quickadd-buttons"> \
                         <button id="quickadd-button-submit" style="margin-left: 32px;">salvar</button> <button id="quickadd-button-clear">limpar</button> \
+                        </div> \
                      </div> \
                  </div>';
 
@@ -18,6 +21,14 @@ quickadd_html = '<div id="quickadd-box" class="widget-box"> \
 var css_quickadd_inputs = {
     'width': '112px',
     'padding': '1px 0'
+}
+
+var css_quickadd_state = {
+    'color': 'red',
+    'display': 'none',
+    'font-size': '11px',
+    'margin-left': '33px',
+    'padding-top': '7px'
 }
 
 var css_quickadd_buttons = {
@@ -37,6 +48,18 @@ function quickaddSave() {
     quickadd_val += $('#quickadd-input-desc').val();
      
     $("#editor-data").val(rawData + "\n" + quickadd_val)
+    $("#quickadd-buttons").hide();
+    $("#quickadd-state").show();
+    $('#quickadd-buttons').ajaxStop(function(){
+        $(this).show();
+        $("#quickadd-state").hide();
+
+        // Clear fields
+        quickaddClear();
+
+        // Set focus to value field
+        $('#quickadd-input-val').focus();
+    });
     editorSave();
 }
 
@@ -68,6 +91,7 @@ $(function() {
     // Apply plugin elements styles
     $('[id^="quickadd-input-"]').css(css_quickadd_inputs);
     $('[id^="quickadd-button-"]').css(css_quickadd_buttons);
+    $('#quickadd-state').css(css_quickadd_state);
 
     // Comment below to start hidden
     //toggleQuickAddBox();
